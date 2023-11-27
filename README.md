@@ -1,4 +1,4 @@
-# GoChatRoom
+# GoChatRoom Server
 
 ## Deplicate proj GoChatRoom
 
@@ -13,3 +13,7 @@
 - Go
 - MySQL
 
+# Client use C# In book
+also visual interface are supported in C#
+
+I won't implement it
