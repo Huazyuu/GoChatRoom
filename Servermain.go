@@ -1,6 +1,7 @@
 package main
 
 import (
+	"GoChat/server"
 	"flag"
 	"fmt"
 	"github.com/fatih/color"
@@ -22,7 +23,7 @@ func main() {
 		return
 	}
 
-	// todo go server.TransmitMsg() client function calls
+	go server.TransmitMsg()
 
 	ccS.Println("♦start successfully,waiting client connects")
 	for {
@@ -34,7 +35,7 @@ func main() {
 		}
 		ccS.Printf("♦[%v]clint connects successfully\n", conn.RemoteAddr())
 
-		// todo Concurrency, one goroutine per client
-		// go server.HandleConnect(conn)
+		// Concurrency, one goroutine per client
+		go server.HandleConnect(conn)
 	}
 }
